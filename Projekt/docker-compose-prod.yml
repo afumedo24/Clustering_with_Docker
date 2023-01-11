@@ -1,0 +1,20 @@
+version: "3.6"
+services:
+  nginx:
+    ports:
+      - "80:80"
+  node: 
+    build: 
+      context: .
+      args: 
+        NODE_ENV: production
+    deploy:
+      replicas: 4
+      restart_policy: 
+        condition: any
+      update_config:
+        delay: 15s
+        parallelism: 2
+    environment:
+    - NODE_ENV=production
+    command: node app.js
