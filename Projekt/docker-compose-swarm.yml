@@ -69,8 +69,3 @@ services:
 
 volumes:
   mongoDB:
-    driver: local
-    driver_opts:
-      type: nfs
-      o: addr=10.211.55.16,nolock,soft,rw
-      device: ":home/node-app/mongo-data"
