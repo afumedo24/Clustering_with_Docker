@@ -1,4 +1,6 @@
 FROM node:15
+LABEL MAINTAINER="ahmed.abdaal@stud.th-deg.de"
+LABEL MAINTAINER="jenny.roetzer@stud.th-deg.de"
 WORKDIR /app
 COPY package.json .
 

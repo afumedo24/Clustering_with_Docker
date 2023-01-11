@@ -3,9 +3,9 @@
 read -p "Enter mygit Username: " username
 read -s -p "Enter mygit Password: " password
 
-docker login -p $password -u $username registry.mygit.th-deg.de
+mkdir home/node-app/mongo-data
 
-##docker network ls | grep thd-net >> /dev/null 2>&1
+docker login -p $password -u $username registry.mygit.th-deg.de
 
 docker stack deploy --with-registry-auth -c docker-compose-swarm.yml myapp
 
