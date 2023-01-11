@@ -15,7 +15,7 @@ app.use(session({
     saveUninitialized: true,
     resave: false,
     cookie: {
-        maxAge: 1000*30,
+        maxAge: 1000*60*5, //5min
     },
     store: MongoStore.create({
         mongoUrl: mongoURL,

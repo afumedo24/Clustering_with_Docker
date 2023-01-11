@@ -16,12 +16,11 @@ services:
     depends_on:
       - node
     
-
   node: 
     image: registry.mygit.th-deg.de/aa10413/docker-registry/node:latest
     restart: always
     ports:
-      - 3000:80
+     - 3000:80
     environment:
       - PORT=3000
       - NODE_ENV=production
@@ -32,9 +31,6 @@ services:
       restart_policy: 
         condition: any
     command: node app.js
-
-
-
 
   mongo: 
     image: registry.mygit.th-deg.de/aa10413/docker-registry/mongo:latest
