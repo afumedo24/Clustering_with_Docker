@@ -11,6 +11,8 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+      restart_policy: 
+        condition: any
       placement:
         constraints: [node.role == manager]
     depends_on:
@@ -19,8 +21,6 @@ services:
   node: 
     image: registry.mygit.th-deg.de/aa10413/docker-registry/node:latest
     restart: always
-    ports:
-     - 3000:80
     environment:
       - PORT=3000
       - NODE_ENV=production
@@ -43,6 +43,8 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+      restart_policy: 
+        condition: any
       placement:
         constraints: [node.role == manager]
       
